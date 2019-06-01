@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Shop.View.SalesPage">
+    <Position X="7" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IABBwQAAAABCACACgACBAAQAAAAAAgBAAAAGAAiEBQg=</HashCode>
+      <FileName>View\SalesPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="VehicleInfo" />
+      <Property Name="CustomerInfo" />
+      <Property Name="SalesInfoManager" />
+      <Property Name="Notify1" />
+      <Property Name="Invoice" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Shop.Model.SalesInfo">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAEAQAgQAAAAAAAAAAAAAAAABABAAAAgAAACAA=</HashCode>
+      <FileName>Model\SalesInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Model.CustomerInfo">
+    <Position X="3.25" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgCAAAAAQAAAAAAAAAAAAgAAAAAAI=</HashCode>
+      <FileName>Model\CustomerInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Model.VehicleInfo">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAADAAAQIAAAAAAAAEAIAAAAAAABAgAwAIAiAA=</HashCode>
+      <FileName>Model\VehicleInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.ViewModel.SalesInfoManager">
+    <Position X="3.25" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAgAIBAABAQAAAAAAIAAAAEgAAAAAAAABAA=</HashCode>
+      <FileName>ViewModel\SalesInfoManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SalesInfo" />
+      <Property Name="DatabaseConnector" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Shop.Utilities.DatabaseConnector">
+    <Position X="3.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAQgAA=</HashCode>
+      <FileName>Utilities\DatabaseConnector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Utilities.Notify">
+    <Position X="7" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAABAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\Notify.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SendMail1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Shop.Utilities.SendMail">
+    <Position X="10.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgggAAABAAAAAAAAEAAAACAAAAAAAgABABCAAAAAAA=</HashCode>
+      <FileName>Utilities\SendMail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.View.Invoice">
+    <Position X="10.5" Y="4.5" Width="2" />
+    <AssociationLine Name="DatabaseConnector" Type="Shop.Utilities.DatabaseConnector">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.515" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAABEAAAAAAACAAQAAQEACAAAAAggA=</HashCode>
+      <FileName>View\Invoice.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DatabaseConnector" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

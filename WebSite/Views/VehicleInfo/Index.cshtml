@@ -1,0 +1,103 @@
+﻿@model IEnumerable<WebSite.Models.VehicleInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Loader -->
+<div id="site-loader" class="load-complete">
+    <div class="loader">
+        <div class="loader-inner ball-clip-rotate">
+            <div></div>
+        </div>
+    </div>
+</div><!-- Loader /- -->
+
+<main>
+
+    <!-- Page Banner -->
+    <div class="container-fluid no-padding page-banner">
+        <div class="padding-90"></div>
+        <!-- Container -->
+        <div class="container">
+            <h3>inventory</h3>
+            <ol class="breadcrumb">
+                <li><a href="index-2.html">Home</a></li>
+                <li class="active">inventory</li>
+            </ol>
+        </div><!-- Container /- -->
+        <div class="padding-100"></div>
+    </div><!-- Page Banner /- -->
+
+    <div class="section-padding"></div>
+
+    <!-- Inventory Section -->
+    <div class="inventroy-section container-fluid no-padding">
+        <!-- Container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-8 content-area">
+                    <!-- Row -->
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                        <div class="col-md-6 col-sm-6 col-xs-12 inventroy-box">
+                            @{
+                                var base64 = Convert.ToBase64String(item.CoverImage);
+                                var imageSrc = string.Format("data:image/jpg;base64,{0}", base64);
+                            }
+                            <img src='@imageSrc' alt="Inventory" />
+                            <div class="inventroy-content">
+                                <h3>@Html.DisplayFor(modelItem => item.Make) @Html.DisplayFor(modelItem => item.Model)</h3>
+                                <span>@Html.DisplayFor(modelItem => item.Year)</span>
+                                <span>@Html.DisplayFor(modelItem => item.Transmission)</span>
+                                <h4>START FROM <b>BDT @Html.DisplayFor(modelItem => item.Price)</b></h4>
+
+                            </div>
+                            <div class="inventroy-content">
+                                <a href=@Url.Action("Details","VehicleInfo",new { id=item.Id }) title="Book now">book now</a>
+                            </div>
+
+                        </div>
+                        }
+                    </div><!-- Row /- -->
+                    <div class="padding-40"></div>
+                    <nav class="ow-pagination">
+                        <ul class="pagination">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                        </ul>
+                    </nav>
+                    <div class="padding-50"></div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 widget-area">
+                    <img src="~/Content/images/banner.jpg" style="width:1920px;height:1080px;" />
+                    <div class="padding-50"></div>
+                </div>
+            </div>
+        </div><!-- Container /- -->
+    </div><!-- Main Section /- -->
+
+    <div class="padding-100"></div>
+
+</main>
+
+<script>
+    function myFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>

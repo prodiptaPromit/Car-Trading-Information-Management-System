@@ -1,0 +1,1 @@
+﻿select * from Make cross join Model Cross Join Vehicle where Model.MakeId=Make.Id and Model.Id = Vehicle.ModelId

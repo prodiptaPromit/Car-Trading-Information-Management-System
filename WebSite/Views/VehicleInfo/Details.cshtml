@@ -1,0 +1,180 @@
+﻿@model WebSite.Models.VehicleInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Loader -->
+<div id="site-loader" class="load-complete">
+    <div class="loader">
+        <div class="loader-inner ball-clip-rotate">
+            <div></div>
+        </div>
+    </div>
+</div><!-- Loader /- -->
+
+<main>
+
+    <!-- Page Banner -->
+    <div class="container-fluid no-padding page-banner">
+        <div class="padding-90"></div>
+        <!-- Container -->
+        <div class="container">
+            <h3>inventory</h3>
+            <ol class="breadcrumb">
+                <li><a href="index-2.html">Home</a></li>
+                <li class="active">inventory single</li>
+            </ol>
+        </div><!-- Container /- -->
+        <div class="padding-100"></div>
+    </div><!-- Page Banner /- -->
+
+    <div class="section-padding"></div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12 content-area">
+                <div class="inventory-slider">
+                    <ul id="imageGallery" class="gallery">
+                        @foreach (byte[] img in ViewBag.Images)
+                        {
+                            var base64 = Convert.ToBase64String(img);
+                            var imageSrc = string.Format("data:image/jpg;base64,{0}", base64);
+                            <li data-thumb='@imageSrc'>
+                                <img src='@imageSrc' alt="Inventory" />
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="inventroy-content inventory-single">
+                    <h3>@Html.DisplayFor(model => model.Make) @Html.DisplayFor(model => model.Model)</h3>
+                    <div class="inv-box">
+                        <span>@Html.DisplayFor(model => model.Year)</span>
+                        <span>@Html.DisplayFor(model => model.Milage)</span>
+                    </div>
+                    <h4>START FROM <b>BDT @Html.DisplayFor(model => model.Price)</b><a href="#" title="VIEW DETAILS">VIEW DETAILS  <i class="fa fa-angle-double-right"></i></a></h4>
+                </div>
+                <div class="inventory-tabs">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#specifications" role="tab" data-toggle="tab">specifications</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="specifications">
+                            <p>@Html.DisplayFor(model => model.Specification)</p>
+                        </div>
+                    </div>
+                    <div class="padding-50"></div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 widget-area">
+                <aside class="widget widget_specifiaction">
+                    <h3 class="widget-title">Specifications</h3>
+                    <div class="specifications-content">
+                        <p><span>Year:</span>@Html.DisplayFor(model => model.Year)</p>
+                        <p><span>Make:</span>@Html.DisplayFor(model => model.Make)</p>
+                        <p><span>Model:</span>@Html.DisplayFor(model => model.Model)</p>
+                        <p><span>Price:</span>@Html.DisplayFor(model => model.Price) BDT</p>
+                        <p><span>Edition:</span>@Html.DisplayFor(model => model.Engine)</p>
+                        <p><span>Transmission:</span>@Html.DisplayFor(model => model.Transmission)</p>
+                        <p><span>Displacement:</span>@Html.DisplayFor(model => model.Displacement)</p>
+                    </div>
+                </aside>
+                <aside class="widget widget_loan">
+                    <h3 class="widget-title">Loan Estimator</h3>
+                    <form>
+                        <div class="form-group">
+                            <input id="prncipleAmount" name="prncipleAmount" type="text" class="form-control" placeholder="Loan Amount" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="resAmount" name="resAmount" class="form-control" placeholder="Loan Terms in Year" />
+                        </div>
+                        <div class="form-group">
+                            <input id="InterestRate" name="InterestRate" type="text" class="form-control" placeholder="Rate of Interest" />
+                        </div>
+                        <button onclick="EmiCalculaor()" type="submit" id="btn_submit">Get Result</button>
+                    </form>
+                </aside>
+                <div class="padding-50"></div>
+            </div>
+        </div><!-- Row /- -->
+        <div class="padding-100"></div>
+    </div><!-- Container /- -->
+
+</main>
+
+<script>
+    function EmiCalculaor() {
+
+
+        //var month = getmonth();
+        var rate = $("#InterestRate").val();
+        var pamt = $("#prncipleAmount").val();
+        var year = $("#resAmount").val();
+
+        var emi;
+        var month = year * 12;
+
+        rate = rate / (12 * 100); // one month interest 
+        
+        emi = (pamt * rate * Math.pow(1 + rate, month)) / (Math.pow(1 + rate, month) - 1);
+
+        
+        /*var monthlyInterestRatio = (rate / 100) / 12;
+        var monthlyInterest = (monthlyInterestRatio * pamt);
+        var top = Math.pow((1 + monthlyInterestRatio), month);
+        var bottom = top - 1;
+        var sp = top / bottom;
+        var emi = ((pamt * monthlyInterestRatio) * sp);
+        var result = emi.toFixed(2);
+        var totalAmount = emi * month;
+        var yearlyInteret = totalAmount - pamt;
+        var downPayment = pamt * (20 / 100);*/
+        //alert(emi);
+        //$("#result").empty();
+        ///$("#result").append("Your EMI = " + result);
+
+        //document.getElementById("demo").innerHTML = $("#result").append("Your EMI = " + result);
+
+        if (confirm("Your monthly EMI stands BDT " + Math.ceil(emi) + " only.")) {
+            txt = "You pressed OK!";
+        }
+        else {
+            txt = "You pressed Cancel!";
+        }
+
+    }
+
+    function getmonth() {
+        /*var x = 0;
+        if ($("#emiMonth1").val() != null)
+            x = 12;
+        else if ($("#emiMonth2").val() != null)
+            x = 24;
+        else if ($("#emiMonth3").val() != null)
+            x = 36;
+        else if ($("#emiMonth4").val() != null)
+            x = 48;
+        else
+            x = 48;
+            */
+       // var checkedValue = document.querySelector('.check-box:checked').value;
+        var checkedValue = null;
+        var inputElements = document.getElementsByClassName('check-box');
+        for (var i = 0; inputElements[i]; ++i) {
+            if (inputElements[i].checked) {
+                checkedValue = inputElements[i].value;
+                break;
+            }
+        }
+        return checkedValue;
+    }
+
+
+</script>

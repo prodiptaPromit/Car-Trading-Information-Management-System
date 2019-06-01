@@ -1,0 +1,102 @@
+﻿<Page x:Class="Shop.View.ManageStuffPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shop.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ManageStuffPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <TabControl>
+                <TabItem Header="Add Stuff" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Id" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="IdText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Name" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="NameText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Designation" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="DesignationComboBox" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="Owner"/>
+                                    <ComboBoxItem Content="Manager"/>
+                                    <ComboBoxItem Content="Asst. Manager"/>
+                                    <ComboBoxItem Content="Mechanic"/>
+                                    <ComboBoxItem Content="Driver"/>
+                                    <ComboBoxItem Content="Service Boy"/>
+                                </ComboBox>
+                                <TextBlock Text="Salary" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="SalaryText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="EmployeePreviewTextInput"/>
+                                <TextBlock Text="NID Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="NIdText" Margin="0,0,0,10" FontSize="16" MaxLength="17" PreviewTextInput="EmployeePreviewTextInput"/>
+                                <TextBlock Text="Address" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="AddressText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Contact" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="ContactText" Margin="0,0,0,10" FontSize="16" MaxLength="11" PreviewTextInput="EmployeePreviewTextInput"/>
+                                <Button Name="AddStuffBtn" Click="AddStuffBtn_Click" FontSize="16" Content="Add"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Update Stuff Data" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Stuff Id" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="SIdText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Field to Update" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="FieldComboBox" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="Name"/>
+                                    <ComboBoxItem Content="Designation"/>
+                                    <ComboBoxItem Content="Salary"/>
+                                    <ComboBoxItem Content="NID"/>
+                                    <ComboBoxItem Content="Address"/>
+                                    <ComboBoxItem Content="Contact"/>
+                                </ComboBox>
+                                <TextBlock Text="New Data" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="NewDataText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="NewDataText_PreviewTextInput"/>
+                                <Button Name="UpdateStuffButton" FontSize="16" Content="Update" Click="UpdateStuffButton_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Remove Stuff" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Stuff Id" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="RStuffId" Margin="0,0,0,10" FontSize="16"/>
+                                <Button Name="RemoveBtn" Click="RemoveBtn_Click" FontSize="16" PreviewTextInput="EmployeePreviewTextInput" Content="Remove Stuff"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <DataGrid Grid.Column="1" Name="StuffGrid" FontSize="16"/>
+    </Grid>
+</Page>

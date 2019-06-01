@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Shop.ViewModel.StuffInfoManager">
+    <Position X="3.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAABAAAIAAgAKAAAAAAEAAAAAAACAA=</HashCode>
+      <FileName>ViewModel\StuffInfoManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StuffInfo" />
+      <Property Name="DatabaseConnector" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Shop.Model.StuffInfo">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAAAAAACAAAAAQAAAAAAgACAAAAAAAAAAI=</HashCode>
+      <FileName>Model\StuffInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Utilities.DatabaseConnector">
+    <Position X="3.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAQgAA=</HashCode>
+      <FileName>Utilities\DatabaseConnector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.View.ManageStuffPage">
+    <Position X="7.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAgAABAAKAAgADAAAAAAAAAAAAAEAACAAAACAA=</HashCode>
+      <FileName>View\ManageStuffPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StuffInfoManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

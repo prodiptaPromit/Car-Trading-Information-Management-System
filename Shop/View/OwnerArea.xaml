@@ -1,0 +1,268 @@
+﻿<Page x:Class="Shop.View.OwnerArea"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shop.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OwnerArea">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <TabControl>
+                <TabItem Header="Add Make" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Make" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBox Name="MakeText" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBlock Text="Country" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBox Name="CountryText" Margin="0,0,0,10" FontSize="16"/>
+                                <Button Name="AddMakeBtn" FontSize="16" Content="Add" Click="AddMakeBtn_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Add Model" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Make Id" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBox Name="MakeIDText" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBlock Text="Model" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBox Name="ModelText" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBlock Text="Year" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBox Name="YearText" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBlock Text="Edition" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBox Name="EditionText" Margin="0,0,0,5" FontSize="16"/>
+                                <TextBlock Text="Body Type" Margin="0,0,0,5" FontSize="16"/>
+                                <ComboBox Name="BodyComboBox" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="SUV"/>
+                                    <ComboBoxItem Content="Sedan"/>
+                                    <ComboBoxItem Content="Hatch Back"/>
+                                    <ComboBoxItem Content="Hybrid"/>
+                                    <ComboBoxItem Content="MPV"/>
+                                    <ComboBoxItem Content="Minivan"/>
+                                    <ComboBoxItem Content="LUV"/>
+                                    <ComboBoxItem Content="Others"/>
+                                </ComboBox>
+                                <TextBlock Text="Engine" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="EngineText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Transmission" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="TransmissionComboBox" Margin="0,0,0,20" FontSize="16">
+                                    <ComboBoxItem Content="Automatic"/>
+                                    <ComboBoxItem Content="Auto-Manual"/>
+                                    <ComboBoxItem Content="Manual"/>
+                                </ComboBox>
+                                <Button Name="AddModelBtn" Click="AddModelBtn_Click" FontSize="16" Content="Add"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Add User" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Account Id" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="AccountIdText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Designation" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="DesignationText" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="Owner"/>
+                                    <ComboBoxItem Content="Manager"/>
+                                    <ComboBoxItem Content="Asst. Manager"/>
+                                    <ComboBoxItem Content="Accountant"/>
+                                </ComboBox>
+                                <TextBlock Text="Password" Margin="0,0,0,10" FontSize="16"/>
+                                <PasswordBox Name="PasswordText" FontSize="16" Margin="0,0,0,30"/>
+                                <Button Name="AddUserBtn"  FontSize="16" Content="Add" Click="AddUserBtn_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Accounts" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <DatePicker Name="dp" Margin="0,0,0,20" FontSize="16"/>
+                                <Button Name="UpdateAccountsBtn" FontSize="16" Content="Trigger Accounts System" Click="UpdateAccountsBtn_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+                <TabItem Header="Income Statement" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Year" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="IAccYearText" Margin="0,0,0,10" FontSize="16"/>
+                                <Button Name="PrintIncomeStatementButton" FontSize="16" Content="Print Income Statement" Click="PrintIncomeStatementButton_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <TabControl Grid.Column="1">
+            <TabItem Header="Make" FontSize="16">
+                <DataGrid Name="MakeData" FontSize="16" SelectionMode="Single" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Id}" Header="ID" x:Name="MakeId" IsReadOnly="True" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Make}" Header="Name" x:Name="MakeName" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Country}" Header="Country" x:Name="Country" Width="Auto"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="EditMakeButton" Content="Edit" Click="EditMakeButton_Click" CommandParameter="{Binding Id}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="DeleteMakeButton" Content="Remove" Click="DeleteMakeButton_Click" ></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Model" FontSize="16">
+                <DataGrid Name="ModelData" FontSize="16" SelectionMode="Single" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Make}" Header="Make" Width="Auto" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Model" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Year}" Header="Year" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Edition}" Header="Edition" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Engine}" Header="Engine" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding BodyType}" Header="Body Type" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Transmission}" Header="Transmission" Width="Auto"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="EditModelButton" Content="Edit" Click="EditModelButton_Click" CommandParameter="{Binding Id}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="DeleteModelButton" Content="Remove" Click="DeleteModelButton_Click"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Users" FontSize="16">
+                <DataGrid Name="UserData" FontSize="16" SelectionMode="Single" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Account}" Header="Account" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Designation}" Header="Dessignation" IsReadOnly="True" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Password}" Header="Password" Width="Auto"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="EditUsersButton" Content="Edit" Click="EditUsersButton_Click" CommandParameter="{Binding Id}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="DeleteUsersButton" Content="Remove" Click="DeleteUsersButton_Click" ></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Customers" FontSize="16" >
+                <DataGrid Name="CustomerData" FontSize="16" SelectionMode="Single" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name" IsReadOnly="True" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Profession}" Header="Profession" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding NId}" Header="NId" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding eTIN}" Header="eTIN" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Contact}" Header="Contact" Width="Auto"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="EditCustomersButton" Content="Edit" Click="EditCustomersButton_Click" CommandParameter="{Binding Id}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Expense" FontSize="16">
+                <DataGrid Name="ExpenseData" FontSize="16" SelectionMode="Single" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Amount}" Header="Amount" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="Auto"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="EditExpenseButton" Content="Edit" Click="EditExpenseButton_Click" CommandParameter="{Binding Id}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="AccountsRecievables" FontSize="16">
+                <DataGrid Name="AccountsRecievablesData" FontSize="16" SelectionMode="Single" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Account}" Header="Title" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Amount}" Header="Amount" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding PaymentMethod}" Header="Payment Method" Width="Auto"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="Auto"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <Button Name="EditARButton" Content="Edit" Click="EditARButton_Click" CommandParameter="{Binding Id}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Sales Record" FontSize="16">
+                <DataGrid Name="SalesData" FontSize="16"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

@@ -1,0 +1,42 @@
+﻿<Page x:Class="Shop.View.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shop.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="HomePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Name="HomeBtn" Content="Home" FontSize="18" Background="Black" BorderBrush="Red" Foreground="AliceBlue" Click="HomeBtn_Click"/>
+            <Button Grid.Row="1" Name="InventoryBtn" Content="Inventory" FontSize="18" Background="Black" BorderBrush="Red" Foreground="AliceBlue" Click="InventoryBtn_Click"/>
+            <Button Grid.Row="2" Background="Black" BorderBrush="Red" Content="Sales" Name="SaleCarBtn" FontSize="18" Foreground="AliceBlue" Click="SaleCarBtn_Click"/>
+            <Button Grid.Row="3" Background="Black" BorderBrush="Red" Content="Manage Stuff" Name="ManageStuffBtn" FontSize="18" Foreground="AliceBlue" Click="ManageStuffBtn_Click"/>
+            <Button Grid.Row="4" Background="Black" BorderBrush="Red" Content="Expenditures" Name="ExpendituresButton" FontSize="18" Foreground="AliceBlue" Click="ExpendituresButton_Click"/>
+            <Button Grid.Row="5" Background="Black" BorderBrush="Red" Content="Owner's Area" Name="OwnerAreaBtn" FontSize="18" Foreground="AliceBlue" Click="OwnerAreaBtn_Click"/>
+            <Button Grid.Row="6" Background="Black" BorderBrush="Red" Content="Dashboard" Name="DashBtn" FontSize="18" Foreground="AliceBlue" Click="DashBtn_Click"/>
+            <Button Grid.Row="7" Background="Black" BorderBrush="Red" Name="SiteBtn" FontSize="18" Content="Support" Foreground="AliceBlue" Click="SiteBtn_Click"/>
+            <Button Grid.Row="8" Background="Black" BorderBrush="Red" Content="Log Out" Name="LogOutBtn" FontSize="18" Foreground="AliceBlue" Click="LogOutBtn_Click"/>
+        </Grid>
+
+        <Frame Name="ActivityFrame" Grid.Column="1"/>
+    </Grid>
+</Page>

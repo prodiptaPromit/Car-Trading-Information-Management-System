@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Shop.Model.ExpenseInfo">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAACAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ExpenseInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Utilities.DatabaseConnector">
+    <Position X="3.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAQgAA=</HashCode>
+      <FileName>Utilities\DatabaseConnector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Utilities.Notify">
+    <Position X="7.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAABAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\Notify.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SendMail2" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Shop.Utilities.SendMail">
+    <Position X="11" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgggAAABAAAAAAAAEAAAACAAAAAAAgABABCAAAAAAA=</HashCode>
+      <FileName>Utilities\SendMail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.ViewModel.ExpenseInfoManager">
+    <Position X="3.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAQAAAAAAABYAAAAAAAAAAAAAAEAAAAAMBAAA=</HashCode>
+      <FileName>ViewModel\ExpenseInfoManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ExpenseInfo" />
+      <Property Name="DatabaseConnector" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Shop.View.ExpendituresPage">
+    <Position X="7.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAABAACAAAACAAAAAAAAAAABABAQCAACEAAA=</HashCode>
+      <FileName>View\ExpendituresPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Notify1" />
+      <Property Name="ExpenseInfoManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

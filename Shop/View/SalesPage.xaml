@@ -1,0 +1,151 @@
+﻿<Page x:Class="Shop.View.SalesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shop.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SalesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <TabControl>
+                <TabItem Header="Add Customer" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Name" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="NameText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Profession" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="ProfessionText" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="Politician"/>
+                                    <ComboBoxItem Content="Businessman"/>
+                                    <ComboBoxItem Content="Govt. Service"/>
+                                    <ComboBoxItem Content="Service Holder"/>
+                                    <ComboBoxItem Content="Engineer"/>
+                                    <ComboBoxItem Content="Doctor"/>
+                                </ComboBox>
+                                <TextBlock Text="eTIN Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="eTINText" Margin="0,0,0,10" FontSize="16" MaxLength="12" PreviewTextInput="eTINText_PreviewTextInput"/>
+                                <TextBlock Text="NId Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="NIdText" Margin="0,0,0,10" FontSize="16" MaxLength="17" PreviewTextInput="eTINText_PreviewTextInput"/>
+                                <TextBlock Text="Contact" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="ContactText" Margin="0,0,0,20" FontSize="16" MaxLength="11" PreviewTextInput="eTINText_PreviewTextInput"/>
+                                <Button Name="AddCustomerBtn" Click="AddCustomerBtn_Click"  FontSize="16" Content="Add"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Sale Car" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Engine Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="EngineNumberText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Sale Price" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="SalePriceText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="eTINText_PreviewTextInput"/>
+                                <TextBlock Text="Paid" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="PaidText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="eTINText_PreviewTextInput"/>
+                                <TextBlock Text="PaymentMethod" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="PaymentMethodInitialText" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="Check"/>
+                                    <ComboBoxItem Content="Cash"/>
+                                </ComboBox>
+                                <TextBlock Text="Contact Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="CustomerIdText" Margin="0,0,0,10" FontSize="16" MaxLength="11" PreviewTextInput="eTINText_PreviewTextInput"/>
+                                <TextBlock Text="Date" FontSize="16" Margin="0,0,0,10"/>
+                                <DatePicker Name="DatePick" FontSize="16" Margin="0,0,0,30"/>
+                                <Button Name="SaleCarBtn" Click="SaleCarBtn_Click" FontSize="16" Content="Sale"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Accounts Receivables" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Engine Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="AccountNumberText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Amount Paid" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="AmountPaidText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="eTINText_PreviewTextInput"/>
+                                <TextBlock Text="PaymentMethod" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="PaymentMethodText" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="Check"/>
+                                    <ComboBoxItem Content="Cash"/>
+                                </ComboBox>
+                                <TextBlock Text="Date" Margin="0,0,0,10" FontSize="16"/>
+                                <DatePicker Name="ARDatePick" FontSize="16" Margin="0,0,0,30"/>
+                                <Button Name="AccRcvdBtn" Click="AccRcvdBtn_Click" FontSize="16" Content="Update"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Deliver Car" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Customer Contact Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="DEngineNumberText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="eTINText_PreviewTextInput" MaxLength="11"/>
+                                <Button Name="DeliverBtn" Click="DeliverBtn_Click" FontSize="16" Content="Deliver"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Invoice" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <TextBlock Text="Engine Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="IEngineNumberText" Margin="0,0,0,10" FontSize="16"/>
+                                <Button Name="InvoiceButton" Click="InvoiceButton_Click" FontSize="16" Content="Generate Invoice"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <TabControl Grid.Column="1">
+            <TabItem Header="Inventory Table" FontSize="16">
+                <DataGrid Name="InventoryData" FontSize="16"/>
+            </TabItem>
+            <TabItem Header="Customer Table" FontSize="16">
+                <DataGrid Name="CustomerData" FontSize="16"/>
+            </TabItem>
+            <TabItem Header="Sales Table" FontSize="16">
+                <DataGrid Name="SalesData" FontSize="16"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

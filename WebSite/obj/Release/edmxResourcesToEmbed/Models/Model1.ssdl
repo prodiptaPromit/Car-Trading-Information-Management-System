@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Month" Type="varchar" MaxLength="50" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Revenue" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Expense" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Profit" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="AccountsReceivables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Date" Type="date" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Profession" Type="varchar(max)" />
+    <Property Name="NId" Type="nvarchar(max)" />
+    <Property Name="eTIN" Type="nvarchar(max)" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Expenses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EngineNumber" Type="nvarchar(max)" />
+    <Property Name="Image" Type="image" />
+  </EntityType>
+  <EntityType Name="Make">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Make" Type="nvarchar(max)" />
+    <Property Name="Country" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MakeId" Type="int" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Edition" Type="nvarchar(max)" />
+    <Property Name="Engine" Type="varchar" MaxLength="50" />
+    <Property Name="BodyType" Type="varchar" MaxLength="50" />
+    <Property Name="Transmission" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SalesRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EngineNumber" Type="nvarchar(max)" />
+    <Property Name="ChassisNumber" Type="nvarchar(max)" />
+    <Property Name="Color" Type="varchar" MaxLength="50" />
+    <Property Name="SalePrice" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Paid" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Due" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="ModelId" Type="int" />
+  </EntityType>
+  <EntityType Name="Stuff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Salary" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="NId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="EngineNumber" />
+    </Key>
+    <Property Name="EngineNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChassisNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar(max)" />
+    <Property Name="Purchase" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="SalePrice" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="ModelId" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Milage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="ShopDatabaseModelStoreContainer">
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountsReceivables" EntityType="Self.AccountsReceivables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Make" EntityType="Self.Make" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalesRecord" EntityType="Self.SalesRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stuff" EntityType="Self.Stuff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

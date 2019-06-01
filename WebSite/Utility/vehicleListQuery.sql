@@ -1,0 +1,1 @@
+﻿select Make.Make, Model.Name, Model.Year, Vehicle.Description, Images.ImagePath from Make cross join Model cross join Vehicle cross join Images where Make.Id=Model.MakeId and Vehicle.ModelId=Model.Id and Images.EngineNumber=Vehicle.EngineNumber

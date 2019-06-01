@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<!-- Loader -->
+<div id="site-loader" class="load-complete">
+    <div class="loader">
+        <div class="loader-inner ball-clip-rotate">
+            <div></div>
+        </div>
+    </div>
+</div><!-- Loader /- -->
+
+<main>
+
+    <!-- Page Banner -->
+    <div class="container-fluid no-padding page-banner">
+        <div class="padding-90"></div>
+        <!-- Container -->
+        <div class="container">
+            <h3>contact</h3>
+            <ol class="breadcrumb">
+                <li><a href="index-2.html">Home</a></li>
+                <li class="active">contact</li>
+            </ol>
+        </div><!-- Container /- -->
+        <div class="padding-100"></div>
+    </div><!-- Page Banner /- -->
+
+    <div class="section-padding"></div>
+
+    <!-- Contact Section -->
+    <div class="container-fluid no-padding contact-section">
+        <!-- Container -->
+        <div class="container">
+            <h3>Leave A Message</h3>
+            <form id="myForm" class="row">
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" name="input_fname" id="input_fname" dirname="input_fname" required="" placeholder="First Name" class="form-control">
+                    <input type="text" name="input_lname" id="input_lname" dirname="input_lname" required="" placeholder="Last Name" class="form-control">
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                    <input type="email" name="input_email" id="input_email" dirname="input_email" required="" placeholder="Email address" class="form-control">
+                    <input type="email" name="input_phone" id="input_phone" dirname="input_phone" required="" placeholder="Phone" class="form-control">
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                    <textarea name="textarea_message" id="textarea_message" dirname="textarea_message" placeholder="Write message" rows="4" class="form-control"></textarea>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button id="btn_submit" onclick="myFunction()" title="Send">Send</button>
+                </div>
+                <div class="alert-msg" id="alert-msg"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="padding-100"></div>
+    <div class="padding-30"></div>
+
+    <!-- Map -->
+    <div class="container-fluid no-padding map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7300.286575954407!2d90.3510743768569!3d23.81350325368276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c11f78054a7b%3A0xd2131464236aa7e9!2sRupnagar+Residential+Area%2C+Dhaka!5e0!3m2!1sen!2sbd!4v1511455316619" width="1920" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div><!-- Map /- -->
+
+</main>
+
+
+<script>
+function myFunction() {
+    var txt;
+    
+    if (confirm("Your request is being processing. You'll get response shortly from authorized personnel."))
+    {      
+      txt = "You pressed OK!";      
+    }
+    else
+    {
+      txt = "You pressed Cancel!";
+    }
+
+    document.getElementById("myForm").reset();
+
+    }
+</script>

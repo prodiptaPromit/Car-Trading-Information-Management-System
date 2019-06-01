@@ -1,0 +1,118 @@
+﻿<Page x:Class="Shop.View.InventoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shop.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InventoryPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <TabControl>
+                <TabItem Header="Add Car" FontSize="16">
+                    <ScrollViewer>
+                        <Grid Name="AddCarGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <TextBlock Text="Make" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="MakeComboBox" Margin="0,0,0,10" FontSize="16" DropDownClosed="MakeComboBox_DropDownClosed"/>
+                                <TextBlock Text="Model" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="ModelComboBox" Margin="0,0,0,10" FontSize="16" DropDownClosed="ModelComboBox_DropDownClosed"/>
+                                <TextBlock Text="Edition" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="EditionComboBox" Margin="0,0,0,10" FontSize="16" DropDownClosed="EditionComboBox_DropDownClosed"/>
+                                <TextBlock Text="Year" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="YearComboBox" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Engine Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="EngineNumberText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Chassis Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="ChassisNumberText" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBlock Text="Color" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="ColorComboBox" Margin="0,0,0,10" FontSize="16">
+                                    <ComboBoxItem Content="Red Wine"/>
+                                    <ComboBoxItem Content="Perl White"/>
+                                    <ComboBoxItem Content="Black"/>
+                                    <ComboBoxItem Content="Silver"/>
+                                    <ComboBoxItem Content="Blue"/>
+                                </ComboBox>
+                                <TextBlock Text="Milage" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="MilageText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="ExpenseText_PreviewTextInput"/>
+                                <TextBlock Text="Total Purchase Expense" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="ExpenseText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="ExpenseText_PreviewTextInput"/>
+                                <TextBlock Text="Sale Price" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="PriceText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="ExpenseText_PreviewTextInput"/>
+                                <TextBlock Text="Date" Margin="0,0,0,10" FontSize="16"/>
+                                <DatePicker Name="DateText" Margin="0,0,0,20" FontSize="16"/>
+                                <TextBlock Text="Description" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="DescriptionText" Margin="0,0,0,10" FontSize="16" Height="160"/>
+                                <Button FontSize="16" Content="Add" Height="34" Name="AddCarBtn" Click="AddCarBtn_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Add Images" FontSize="16">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                                <Image Name="StuffImage" Source="/Shop;component/Assets/Images/car.png" Stretch="UniformToFill" StretchDirection="DownOnly"/>
+                                <TextBlock Text="Engine Number" Margin="0,0,0,10" FontSize="16"/>
+                                <TextBox Name="IEngineNumberText" Margin="0,0,0,10" FontSize="16"/>
+                                <Grid Margin="0,0,0,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Name="ImagePathText" Grid.Column="0" FontSize="16"/>
+                                    <Button Name="ImgBrowseBtn" Click="ImgBrowseBtn_Click" Grid.Column="1" FontSize="16" Content="..."/>
+                                </Grid>
+                                <Button Content="Add Image" Name="AddImageBtn" FontSize="18" Height="34" Click="AddImageBtn_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Update Information" FontSize="16">
+                    <ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                            <TextBlock Text="Engine Number" Margin="0,0,0,10" FontSize="16"/>
+                            <TextBox Name="UpdateEngineNumberText" Margin="0,0,0,10" FontSize="16"/>
+                            <TextBlock Text="Field to Update" Margin="0,0,0,10" FontSize="16"/>
+                                <ComboBox Name="FeildComboBox" Margin="0,0,0,10" FontSize="16">
+                                <ComboBoxItem Content="Color"/>
+                                <ComboBoxItem Content="Purchase"/>
+                                <ComboBoxItem Content="SalePrice"/>
+                                <ComboBoxItem Content="Description"/>
+                                <ComboBoxItem Content="Milage"/>
+                            </ComboBox>
+                            <TextBlock Text="Data" Margin="0,0,0,10" FontSize="16"/>
+                            <TextBox Name="DataText" Margin="0,0,0,10" FontSize="16" PreviewTextInput="DataText_PreviewTextInput"/>
+                            <Button Name="UpdateModelBtn" FontSize="16" Content="Update" Click="UpdateModelBtn_Click"/>
+                        </StackPanel>
+                    </Grid>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <DataGrid Grid.Column="1" Name="MyGrid" FontSize="16"/>
+    </Grid>
+</Page>
